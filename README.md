@@ -32,25 +32,25 @@ ClickHouse — колоночная СУБД для аналитики. Но д�
 
 ## Как запустить
 
-1. Поднимите ClickHouse в Docker (внутри VM):
+**1. Поднимите ClickHouse в Docker (внутри VM):**
 
     cd ~/clickhouse-demo
     sudo docker compose up -d
 
-2. Установите зависимости:
+**2. Установите зависимости:**
 
     pip install clickhouse-connect
 
-3. Создайте таблицу и загрузите данные:
+**3. Создайте таблицу и загрузите данные:**
 
     cd scripts
     python create_table.py
 
-4. Оптимизируйте таблицу:
+**4. Оптимизируйте таблицу:**
 
     python optimize_table.py
 
-5. Замерьте «плохой» и «хороший» запросы:
+**5. Замерьте «плохой» и «хороший» запросы:**
 
     python benchmark_bad.py
     python benchmark_good.py
