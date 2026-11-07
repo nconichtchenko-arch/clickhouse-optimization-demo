@@ -55,6 +55,19 @@ ClickHouse — колоночная СУБД для аналитики. Но д�
     python benchmark_bad.py
     python benchmark_good.py
 
+## 🔬 Сравнение с Greenplum (MPP Benchmark)
+
+В рамках изучения MPP-СУБД был проведен бенчмарк: загрузка 397 924 строк (e-commerce) и аналитический запрос (`GROUP BY` + `SUM`).
+
+| Этап | ClickHouse | Greenplum |
+| :--- | :--- | :--- |
+| **Загрузка** | 18.63 сек. | 206.99 сек. |
+| **Аналитический запрос** | 0.1207 сек. | 0.7711 сек. |
+
+**Результат:** ClickHouse загрузил данные в **11 раз** быстрее и выполнил запрос в **6.39 раз** быстрее. Это подтверждает преимущество колоночной архитектуры для OLAP-задач.
+
+*Код бенчмарка (`benchmark.py`) находится в корне этого репозитория. Аналогичный код и результаты доступны в [greenplum-dwh-demo](https://github.com/nconichtchenko-arch/greenplum-dwh-demo).*
+
 ## Ссылки
 
 - [Основной проект DWH Marketplace Analytics](https://github.com/nconichtchenko-arch/marketplace-dwh-analytics)
